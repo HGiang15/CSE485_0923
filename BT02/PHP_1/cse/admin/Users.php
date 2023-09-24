@@ -1,4 +1,13 @@
 <?php
+    //Dich vu Bao ve
+    // session_start();
+
+    //Kiem tra thong tin
+    // if(!isset($_SESSION['isLogin'])){
+    //     header("Location:login.php");
+    // }
+?>
+<?php
 include_once 'layout/header.php';
 
 // Phan trang
@@ -8,9 +17,9 @@ if (isset($_GET['page'])) {
     $page = 1;
 }
 
-try{
+try {
     //Buoc 1: Mo ket noi
-    $conn = new PDO("mysql:host=localhost:3307;dbname=cse", "root","123");
+    $conn = new PDO("mysql:host=localhost:3307;dbname=cse", "root", "123");
     //Buoc 2: Thuc hien truy van
     $n = 10 * ($page - 1);
     $sql = "SELECT * FROM users LIMIT 10 OFFSET $n";
@@ -20,8 +29,8 @@ try{
 
     //Buoc 3: Xu ly ket qua
     $users = $stmt->fetchAll();
-}catch(PDOException $e){
-    echo "Error: ".$e->getMessage();
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
 }
 
 
@@ -121,10 +130,17 @@ try{
     <div class="row">
         <div class="col-12">
             <?php
-            if (isset($_GET['success'])) {
-                $id = $_GET['success'];
+            if (isset($_GET['successdel'])) {
+                $id = $_GET['successdel'];
                 echo "<h2 class='text-danger'>The user have id: $id deleted successfully !</h2>";
             }
+
+            if (isset($_GET['success'])) {
+                $id = $_GET['success'];
+                echo "<h2 class='text-success'>{$_GET['success']}</h2>";
+            }
+            ?>
+            <?php
             ?>
             <table class="table table-dark border-0 rounded">
                 <thead>

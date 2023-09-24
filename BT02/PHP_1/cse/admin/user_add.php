@@ -9,7 +9,7 @@ include_once 'layout/header.php';
             echo "<h4 class='p-3 text-danger fw-bold fst-italic' style='background-color:orange; border-radius: 10px;'>Add failed {$_GET['error']}, Fullname or Email already exists</h4>";
         }
         if (isset($_GET['sucessfull'])) {
-            echo "<h4 class='p-3 text-white fst-italic fw-bold' style='background-color:green; border-radius: 10px;'>Added user successfully</h4>";
+            echo "<h4 class='p-3 text-white fst-italic fw-bold' style='background-color:green; border-radius: 10px;'>Added user successfully please comeback Users to check</h4>";
         }
         ?>
         <form class="p-5" style="background-color: #FFF0EE" action="process_user_add.php" method="post">

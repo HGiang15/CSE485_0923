@@ -16,8 +16,8 @@ try{
     $rowCount = $stmt->rowCount();
     if($rowCount>0){
         // echo "Deleted $rowCount row(s).";
-        header("location: Users.php?success=$id");
-    }
+        header("location: Users.php?successdel=$id");
+    } 
 
 }catch(PDOException $e){
     echo $e->getMessage();

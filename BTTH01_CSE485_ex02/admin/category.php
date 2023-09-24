@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ Admin</title>
+    <title>Category Thể loại</title>
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/icon/bootstrap-5.3.0-alpha3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/icon/fontawesome-free-6.4.2-web/css/all.min.css">
@@ -44,33 +42,31 @@
         </div>
     </header>
 
-    <div class="content m-5">
-        <div class="row mx-5" style="justify-content: space-around;">
-            <div class="card" style="width: 14rem;">
-                <div class="card-body text-center">
-                    <p class="card-text text-primary">Người dùng</p>
-                    <h3>110</h3>
-                </div>
-            </div>
-
-            <div class="card" style="width: 14rem;">
-                <div class="card-body text-center">
-                    <p class="card-text text-primary">Thể loại</p>
-                    <h3>10</h3>
-                </div>
-            </div>
-
-            <div class="card" style="width: 14rem;">
-                <div class="card-body text-center">
-                    <p class="card-text text-primary">Tác giả</p>
-                    <h3>20</h3>
-                </div>
-            </div>
-
-            <div class="card" style="width: 14rem;">
-                <div class="card-body text-center">
-                    <p class="card-text text-primary">Bài viết</p>
-                    <h3>110</h3>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="category-content">
+                    <a href="add_category.php">
+                        <button type="button" class="btn btn-success">Thêm mới</button>
+                    </a>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Tên thể loại</th>
+                                <th scope="col">Sửa</th>
+                                <th scope="col">Xóa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Nhạc trữ tình</td>
+                                <td><a href="edit_category.php"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                <td><a href="#"><i class="fa-solid fa-trash"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -88,5 +84,4 @@
     </footer>
     <script src="../assets/icon/bundle.min_v5.3.1.js"></script>
 </body>
-
 </html>
