@@ -322,7 +322,7 @@
             <!-- Side Bar left end -->
 
             <!-- Main start -->
-            <div class="col-md-8 main">
+            <div class="col-md-9 main">
                 <!-- Header start -->
                 <div class="header d-flex justify-content-between mb-5">
                     <i class="bi bi-list fs-1"></i>

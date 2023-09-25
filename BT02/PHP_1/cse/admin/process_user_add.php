@@ -7,12 +7,6 @@ if(isset($_POST['sbmSave'])){
     $groupp = $_POST['groupp'];
     $mobile = $_POST['mobile'];
     $pass = $_POST['pass'];
-//    $pass2 = $_POST['pass2'];
-
-//    if($pass1 != $pass2){
-//        $error = "Mật khẩu không khớp";
-//        header("Location: user_add.php?error=$error");
-//    }
 
     try{
         //Buoc 1: Ket noi DBServer
@@ -27,8 +21,9 @@ if(isset($_POST['sbmSave'])){
         if($stmt->rowCount()>0){
             header("Location: user_add.php?error=existed");
         }else{
+            $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
             $sql_insert = "INSERT INTO users (username, email, gender, groupp, mobile, pass) 
-            VALUES ('$user', '$email', '$gender', '$groupp', '$mobile', '$pass')";
+            VALUES ('$user', '$email', '$gender', '$groupp', '$mobile', '$pass_hash')";
             $stmt = $conn->prepare($sql_insert);
             $stmt->execute();
             if($stmt->rowCount() > 0){

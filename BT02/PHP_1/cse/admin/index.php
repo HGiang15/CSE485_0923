@@ -1,4 +1,14 @@
 <?php
+session_start(); // Bắt đầu session
+
+// Hủy bỏ tất cả các biến session
+$_SESSION = array();
+
+// Hủy bỏ session
+session_destroy();
+?>
+
+<?php
 include_once 'layout/header.php';
 
 ?>

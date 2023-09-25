@@ -1,12 +1,14 @@
 <?php
     //Dich vu Bao ve
-    // session_start();
+    session_start();
 
     //Kiem tra thong tin
-    // if(!isset($_SESSION['isLogin'])){
-    //     header("Location:login.php");
-    // }
+    if(!isset($_SESSION['isLogin'])){
+        header("Location: login.php");
+    }
+
 ?>
+
 <?php
 include_once 'layout/header.php';
 
@@ -23,7 +25,6 @@ try {
     //Buoc 2: Thuc hien truy van
     $n = 10 * ($page - 1);
     $sql = "SELECT * FROM users LIMIT 10 OFFSET $n";
-    //    $conn->query($sql);
     $stmt = $conn->prepare($sql);
     $stmt->execute();
 
@@ -167,7 +168,7 @@ try {
                             <td style="font-size: 14px"><?= $user['3'] ?></td>
                             <td style="font-size: 14px"><?= $user['4'] ?></td>
                             <td style="font-size: 14px"><?= $user['5'] ?></td>
-                            <td style="font-size: 14px"><?= $user['6'] ?></td>
+                            <td style="font-size: 10px"><?= $user['6'] ?></td>
 
                             <td>
                                 <a style="padding: 1px 3px" href="user_detail.php?id=<?= $user['0'] ?>" class="btn btn-secondary"><i class="fa-solid fa-shield-halved" style="font-size: 16px;"></i></a>
