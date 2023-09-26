@@ -18,6 +18,7 @@
             echo "Error: ".$e->getMessage();
         }
     }
+    
     // else{
     //     header("location: ../login.php");
     //     exit();
@@ -75,11 +76,11 @@
                         <h4 class="mb-4 fw-bold">SỬA THÔNG TIN THỂ LOẠI</h4>
                         <div class="input-group flex-nowrap mb-3">
                             <span class="input-group-text ms-5" id="addon-wrapping">Mã thể loại</span>
-                            <input type="text" class="form-control bg-warning me-5" aria-label="ma_tloai" aria-describedby="addon-wrapping" name="ma_tloai" value="<?php echo $tloai[0]; ?>" readonly>
+                            <input type="text" class="form-control bg-warning me-5" aria-label="ma_tloai" aria-describedby="addon-wrapping" name="ma_tloai" value="<?php echo $tloai[0]['ma_tloai']; ?>" readonly>
                         </div>
                         <div class="input-group flex-nowrap mb-3">
                             <span class="input-group-text ms-5" id="addon-wrapping">Tên thể loại</span>
-                            <input type="text" class="form-control me-5" aria-label="ten_tloai" aria-describedby="addon-wrapping" name="ten_tloai" value="<?php echo $tloai[1]; ?>">
+                            <input type="text" class="form-control me-5" aria-label="ten_tloai" aria-describedby="addon-wrapping" name="ten_tloai" value="<?php echo $tloai[0]['ten_tloai']; ?>">
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end me-5">
                             <button type="submit" name="sbmSave" class="btn btn-success px-4 m-0">Lưu lại</button>

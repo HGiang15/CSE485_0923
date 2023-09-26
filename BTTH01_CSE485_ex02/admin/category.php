@@ -5,7 +5,7 @@ if (isset($_GET['admin'])) {
         $conn = new PDO("mysql:host=localhost:3307;dbname=btth01_cse485", "root", "123");
         //Buoc 2: Thuc hien truy van
         $sql = "SELECT * FROM theloai;";
-
+        
         $stmt = $conn->prepare($sql);
         $stmt->execute();
 
@@ -89,7 +89,8 @@ if (isset($_GET['admin'])) {
                                 <tr>
                                     <th scope="row"><?php echo $tloai['ma_tloai']; ?></th>
                                     <td><?php echo $tloai['ten_tloai']; ?></td>
-                                    <td><a href="edit_category.php"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                    <!-- action -->
+                                    <td><a href="edit_category.php?admin=true&id=<?php echo $tloai[0]?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
                                     <td>
                                         <a href="#" data-bs-toggle="modal" data-bs-target="#modal<?php echo $tloai['0']; ?>">
                                             <i class="fa-solid fa-trash"></i>
