@@ -1,5 +1,4 @@
 <?php
-if (isset($_GET['admin'])) {
     try {
         //Buoc 1: Mo ket noi
         $conn = new PDO("mysql:host=localhost:3307;dbname=btth01_cse485", "root", "123");
@@ -27,10 +26,11 @@ if (isset($_GET['admin'])) {
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
-} else {
-    header("location: ../login.php");
-    exit();
-}
+// if (isset($_GET['admin'])) {
+// } else {
+//     header("location: ../login.php");
+//     exit();
+// }
 ?>
 
 <!DOCTYPE html>
@@ -47,34 +47,9 @@ if (isset($_GET['admin'])) {
 
 <body>
     <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="navbar navbar-expand-lg">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link text-dark fw-bold mt-4">Administration</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="index.php?admin=true" class="nav-link mt-4">Trang chủ</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../index.php" class="nav-link mt-4">Trang ngoài</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="category.php?admin=true" class="nav-link mt-4">Thể loại</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="author.php?admin=true" class="nav-link mt-4">Tác giả</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="song.php?admin=true" class="nav-link mt-4">Bài viết</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
+        <?php
+            include_once 'layout/header.php';
+        ?>
     </header>
 
     <div class="content m-5">

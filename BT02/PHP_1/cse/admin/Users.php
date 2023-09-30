@@ -6,7 +6,6 @@ session_start();
 if (!isset($_SESSION['isLogin'])) {
     header("Location: login.php");
 }
-
 ?>
 
 <?php
@@ -188,12 +187,11 @@ try {
                                                 <a style="padding: 1px 3px" href="user_edit.php?id=<?= $user['0'] ?>" class="btn btn-primary"><i class="fa-solid fa-pen" style="font-size: 16px;"></i></a>
                                                 <!-- C1 hiển thị confirm xóa JS -->
                                                 <!-- <form action="process_user_remove.php" method="post" style="display: inline;">
-                                    <input type="hidden" name="idUser" value="<?php //$user['0'] 
-                                                                                ?>">
-                                    <button style="padding: 1px 3px" type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?');">
-                                        <i class="fa-solid fa-trash" style="font-size: 16px;"></i>
-                                    </button>
-                                </form> -->
+                                                    <input type="hidden" name="idUser" value="<?php //$user['0'] ?>">
+                                                    <button style="padding: 1px 3px" type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?');">
+                                                    <i class="fa-solid fa-trash" style="font-size: 16px;"></i>
+                                                    </button>
+                                                </form> -->
                                                 <!-- C2 Hiển thị confirm xóa bootstrap -->
                                                 <a style="padding: 1px 3px" class="btn btn-danger" href="" data-bs-toggle="modal" data-bs-target="#<?= $user[0]; ?>">
                                                     <i class="fa-solid fa-trash" style="font-size: 16px;"></i>

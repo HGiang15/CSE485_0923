@@ -1,17 +1,23 @@
 <?php
-// B1: Kết nối
-include_once 'libs/connect.php';
+try {
+    // B1: Kết nối đến cơ sở dữ liệu
+    $conn = new PDO("mysql:host=localhost:3307;dbname=cse", "root", "123");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Can not connect: " . $e->getMessage());
+}
 
-// B2: Kiểm tra xem có tham số ID được truyền từ URL không
+// Kiểm tra xem có tham số ID được truyền từ URL không
 if (isset($_GET['id'])) {
     $idDetail = $_GET['id'];
-
-    // B3: Tạo câu truy vấn SQL để lấy thông tin người dùng dựa trên ID
+    //Buoc 2: Thuc hien truy van
     $sql = "SELECT * FROM users WHERE userid='$idDetail'";
-    $result = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) == 1) {
-        $user = mysqli_fetch_assoc($result);
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    
+    //Buoc 3: Xử lý kết quả
+    if ($stmt->rowCount() == 1) {
+        $user = $stmt->fetch();
     } else {
         echo "Không tìm thấy người dùng.";
     }
@@ -19,8 +25,26 @@ if (isset($_GET['id'])) {
     echo "ID người dùng không được cung cấp.";
 }
 
-// Đóng kết nối
-mysqli_close($conn);
+// include_once 'libs/connect.php';
+// B2: Kiểm tra xem có tham số ID được truyền từ URL không
+// if (isset($_GET['id'])) {
+//     $idDetail = $_GET['id'];
+
+//     // B3: Tạo câu truy vấn SQL để lấy thông tin người dùng dựa trên ID
+//     $sql = "SELECT * FROM users WHERE userid='$idDetail'";
+//     $result = mysqli_query($conn, $sql);
+
+//     if (mysqli_num_rows($result) == 1) {
+//         $user = mysqli_fetch_assoc($result);
+//     } else {
+//         echo "Không tìm thấy người dùng.";
+//     }
+// } else {
+//     echo "ID người dùng không được cung cấp.";
+// }
+
+// // Đóng kết nối
+// mysqli_close($conn);
 
 ?>
 <!DOCTYPE html>
@@ -69,7 +93,7 @@ mysqli_close($conn);
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th scope="row"><?= $user['0'] ?></th>
+                                        <th scope="row"><?= $user['userid']?></th>
                                         <td style="font-size: 14px"><?= $user['username'] ?></td>
                                         <td style="font-size: 14px" class="fw-bold"><?= $user['email'] ?></td>
                                         <td style="font-size: 14px"><?= $user['gender'] ?></td>

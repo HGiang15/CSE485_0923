@@ -12,34 +12,9 @@
 
 <body>
     <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="navbar navbar-expand-lg">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link text-dark fw-bold mt-4">Administration</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="index.php?admin=true" class="nav-link mt-4">Trang chủ</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../index.php" class="nav-link mt-4">Trang ngoài</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="category.php?admin=true" class="nav-link mt-4">Thể loại</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="author.php?admin=true" class="nav-link mt-4">Tác giả</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="song.php?admin=true" class="nav-link mt-4">Bài viết</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
+        <?php
+        include_once 'layout/header.php';
+        ?>
     </header>
 
     <section>
@@ -54,7 +29,7 @@
                         </div>
                         <div class="gap-2 d-md-flex justify-content-md-end">
                             <button type="submit" class="btn btn-success px-4">Thêm</button>
-                            <a href="category.php?admin=true">
+                            <a href="category.php">
                                 <button type="button" class="btn btn-warning px-4">Quay lại</button>
                             </a>
                         </div>

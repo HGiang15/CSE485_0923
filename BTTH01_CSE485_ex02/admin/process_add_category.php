@@ -26,14 +26,14 @@ if(isset($_POST['ten_tloai'])){
         $stmt = $conn->prepare($sql);
         $stmt->execute();
 
-        header("location: category.php?admin=true");
+        header("location: category.php");
         exit();
 
     }catch(PDOException $e){
         echo $e->getMessage();
     }
 }else{
-    header("location: add_category.php?admin=true");
+    header("location: add_category.php");
     exit();
 }
 

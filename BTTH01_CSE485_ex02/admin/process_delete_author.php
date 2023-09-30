@@ -1,26 +1,25 @@
 <?php
-if(isset($_POST['sbmSave'])){
-    $ma_tloai = $_POST['ma_tloai'];
-    $ten_tloai = $_POST['ten_tloai'];
+if(isset($_GET['id'])){
+    $ma_tgia = $_GET['id'];
 
     try{
         //Buoc 1: Ket noi DBServer
         $conn = new PDO("mysql:host=localhost:3307;dbname=btth01_cse485", "root", "123");
         //Buoc 2: Thuc hien truy van
         
-        $sql = "UPDATE theloai SET ten_tloai = '$ten_tloai'
-        WHERE ma_tloai = '$ma_tloai'";
+        $sql = "DELETE FROM tacgia WHERE ma_tgia='$ma_tgia'";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
 
-        header("location: category.php");
+        header("location: author.php");
         exit();
 
     }catch(PDOException $e){
         echo $e->getMessage();
     }
 }else{
-    header("location: edit_category.php");
+    header("location: author.php");
     exit();
 }
+
 ?>

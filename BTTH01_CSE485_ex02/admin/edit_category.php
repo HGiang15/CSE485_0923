@@ -1,28 +1,27 @@
 <?php
-    if(isset($_GET['id'])){
-        $ma_tloai = $_GET['id'];
+if (isset($_GET['id'])) {
+    $ma_tloai = $_GET['id'];
 
-        try{
-            //Buoc 1: Mo ket noi
-            $conn = new PDO("mysql:host=localhost:3307;dbname=btth01_cse485", "root", "123");
-            //Buoc 2: Thuc hien truy van
-            $sql = "SELECT * FROM theloai WHERE ma_tloai = '$ma_tloai';";
-            
-            $stmt = $conn->prepare($sql);
-            $stmt->execute();
-    
-            //Buoc 3: Xu ly ket qua
-            $tloai = $stmt->fetchAll();
+    try {
+        //Buoc 1: Mo ket noi
+        $conn = new PDO("mysql:host=localhost:3307;dbname=btth01_cse485", "root", "123");
+        //Buoc 2: Thuc hien truy van
+        $sql = "SELECT * FROM theloai WHERE ma_tloai = '$ma_tloai';";
 
-        }catch(PDOException $e){
-            echo "Error: ".$e->getMessage();
-        }
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+        //Buoc 3: Xu ly ket qua
+        $tloai = $stmt->fetchAll();
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
     }
-    
-    // else{
-    //     header("location: ../login.php");
-    //     exit();
-    // }
+}
+
+// else{
+//     header("location: ../login.php");
+//     exit();
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,34 +37,9 @@
 
 <body>
     <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="navbar navbar-expand-lg">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link text-dark fw-bold mt-4">Administration</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="index.php?admin=true" class="nav-link mt-4">Trang chủ</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../index.php" class="nav-link mt-4">Trang ngoài</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="category.php?admin=true" class="nav-link mt-4">Thể loại</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="author.php?admin=true" class="nav-link mt-4">Tác giả</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="song.php?admin=true" class="nav-link mt-4">Bài viết</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
+        <?php
+        include_once 'layout/header.php';
+        ?>
     </header>
 
     <section>
@@ -84,7 +58,7 @@
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end me-5">
                             <button type="submit" name="sbmSave" class="btn btn-success px-4 m-0">Lưu lại</button>
-                            <a href="category.php?admin=true">
+                            <a href="category.php">
                                 <button type="button" class="btn btn-warning px-4 m-0">Quay lại</button>
                             </a>
                         </div>
