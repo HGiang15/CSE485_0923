@@ -11,14 +11,14 @@
             $stmt = $conn->prepare($sql);
             $stmt->execute();
 
-            header("location: category.php");
+            header("location: ../admin/category.php");
             exit();
     
         }catch(PDOException $e){
             echo $e->getMessage();
         }
     }else{
-        header("location: category.php");
+        header("location: ../admin/category.php");
         exit();
     }
 ?>

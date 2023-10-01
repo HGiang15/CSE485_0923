@@ -19,7 +19,7 @@
                         <a href="author.php" class="nav-link mt-4">Tác giả</a>
                     </li>
                     <li class="nav-item">
-                        <a href="song.php" class="nav-link mt-4">Bài viết</a>
+                        <a href="bviet.php" class="nav-link mt-4">Bài viết</a>
                     </li>
                     <li class="nav-item">
                         <a href="User.php" class="nav-link mt-4">Người dùng</a>

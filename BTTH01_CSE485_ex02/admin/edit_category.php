@@ -16,12 +16,11 @@ if (isset($_GET['id'])) {
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
+} else {
+    header("location: category.php");
+    exit();
 }
 
-// else{
-//     header("location: ../login.php");
-//     exit();
-// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +45,7 @@ if (isset($_GET['id'])) {
         <div class="container">
             <div class="row m-5 text-center">
                 <div class="mx-5">
-                    <form action="process_edit_category.php" method="post">
+                    <form action="../post/process_edit_category.php" method="post">
                         <h4 class="mb-4 fw-bold">SỬA THÔNG TIN THỂ LOẠI</h4>
                         <div class="input-group flex-nowrap mb-3">
                             <span class="input-group-text ms-5" id="addon-wrapping">Mã thể loại</span>

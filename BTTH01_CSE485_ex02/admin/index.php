@@ -26,11 +26,6 @@
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
-// if (isset($_GET['admin'])) {
-// } else {
-//     header("location: ../login.php");
-//     exit();
-// }
 ?>
 
 <!DOCTYPE html>

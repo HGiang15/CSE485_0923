@@ -13,11 +13,7 @@ try {
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
-// if(isset($_GET['admin']) ){
-// }else{
-//     header("location: ../login.php");
-//     exit();
-// }
+
 
 ?>
 <!DOCTYPE html>
@@ -47,9 +43,9 @@ try {
                     <button type="button" class="btn btn-success">Thêm mới tác giả</button>
                 </a>
                 <table class="table mt-3">
-                    <theads">
+                    <theads>
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">Mã tác giả</th>
                             <th scope="col">Tên tác giả</th>
                             <th scope="col">Hình tác giả</th>
                             <th scope="col">Sửa</th>
@@ -83,11 +79,11 @@ try {
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    Bạn có chắc chắn muốn xóa người dùng này không?
+                                                    Bạn có chắc chắn muốn xóa người dùng <?php echo $tgia['ma_tgia']; ?> này không?
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                                    <a href="process_delete_author.php?id=<?php echo $tgia['ma_tgia']; ?>"><button type="button" class="btn btn-primary">Yes</button></a>
+                                                    <a href="../post/process_delete_author.php?id=<?php echo $tgia['ma_tgia']; ?>"><button type="button" class="btn btn-primary">Yes</button></a>
                                                 </div>
                                             </div>
                                         </div>

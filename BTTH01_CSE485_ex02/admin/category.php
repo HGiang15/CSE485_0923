@@ -13,11 +13,6 @@ try {
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
-// if (isset($_GET['admin'])) {
-// } else {
-//     header("location: ../login.php");
-//     exit();
-// }
 
 ?>
 
@@ -76,15 +71,15 @@ try {
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">DELETE User</h1>
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">DELETE USER</h1>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    Bạn có chắc chắn muốn xóa người dùng <?= $tloai[0]; ?> này không?
+                                                    Bạn có muốn xóa người dùng <?= $tloai[0]; ?> này không?
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                                    <a href="process_delete_category.php?id=<?php echo $tloai['0']; ?>"><button type="button" class="btn btn-primary">Yes</button></a>
+                                                    <a href="../post/process_delete_category.php?id=<?php echo $tloai['0']; ?>"><button type="button" class="btn btn-primary">Yes</button></a>
                                                 </div>
                                             </div>
                                         </div>
