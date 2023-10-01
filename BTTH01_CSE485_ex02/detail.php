@@ -47,7 +47,7 @@
             <div class="row">
                 <div class="col-4">
                     <div class="section-img">
-                        <img style="width: 400px; height: 400px;" src="<?php echo $baiviet[0]['hinhanh'];?>" alt="">
+                        <img style="width: 400px; height: 400px;" src="./assets/img/<?php echo $baiviet[0]['hinhanh'];?>" alt="">
                     </div>
                 </div>
                 <div class="col-8">

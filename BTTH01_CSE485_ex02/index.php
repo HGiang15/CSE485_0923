@@ -7,7 +7,7 @@
         $sql = "SELECT baiviet.* 
         FROM baiviet
         INNER JOIN theloai ON baiviet.ma_tloai = theloai.ma_tloai
-        WHERE theloai.ten_tloai = 'Nhạc trẻ';";
+        WHERE theloai.ten_tloai = 'Nhạc pop';";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
 
@@ -56,7 +56,7 @@
                         <a href="detail.php?ma_bviet=<?php echo $baiviet['ma_bviet']; ?>" class="mb-2">
                             <div style="display:inline;" class="text-center">
                                 <div style="display:inline; flex-wrap: wrap;" class="d-flex justify-content-center align-items-center">
-                                    <img src=" <?php echo $baiviet['hinhanh']; ?>" alt="" height="180rem" width="100%" style="border: 1px solid black;" class="rounded-top-2">
+                                    <img src="./assets/img/<?php echo $baiviet['hinhanh']; ?>" alt="" height="180rem" width="100%" style="border: 1px solid black;" class="rounded-top-2">
                                     <br>
                                     <div style="border: 1px solid black; width:100%; height:3rem" class="rounded-bottom-2 d-flex justify-content-center align-items-center">
                                         <span class="fs-6"><?php echo $baiviet['ten_bhat']; ?></span>
