@@ -22,32 +22,38 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <a href="<?php echo DOMAIN.'app/views/Lop/add_lop.php'; ?>">
-                        <button type="button" class="btn btn-success my-4">Thêm mới Lớp</button>
+                    <a href="?controller=student&action=add_student">
+                        <button type="button" class="btn btn-success my-4">Thêm mới Sinh viên</button>
                     </a>
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Tên lớp</th>
+                                <th scope="col">Mã sinh viên</th>
+                                <th scope="col">Tên sinh viên</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Ngày sinh</th>
+                                <th scope="col">Mã lớp</th>
                                 <th scope="col">Sửa</th>
                                 <th scope="col">Xoá</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            foreach ($lops as $lop) {
+                            foreach ($students as $student) {
                             ?>
                                 <tr>
-                                    <th scope="row"><?php echo $lop->getId(); ?></th>
-                                    <td><?php echo $lop->getTenLop(); ?></td>
+                                    <th scope="row"><?php echo $student->getId(); ?></th>
+                                    <td><?php echo $student->getNameStudent(); ?></td>
+                                    <td><?php echo $student->getEmail(); ?></td>
+                                    <td><?php echo $student->getDateOfBirth(); ?></td>
+                                    <td><?php echo $student->getIdClass1(); ?></td>
                                     <td>
-                                        <a class="fs-4 color-primary" href="<?php echo DOMAIN.'app/views/Lop/edit_lop.php?ma_lop='.$lop->getId() ?>">
+                                        <a class="fs-4 color-primary" href="">
                                             <i class="fa-solid fa-pen-to-square"></i>
                                         </a>
                                     </td>
                                     <td>
-                                        <a class="fs-4 color-primary user-delete-link" href="<?php echo DOMAIN.'app/views/Lop/delete_lop.php?ma_lop='.$lop->getId() ?>" data-bs-toggle="modal" data-bs-target="#modal">
+                                        <a class="fs-4 color-primary user-delete-link" href="" data-bs-toggle="modal" data-bs-target="#modal">
                                             <i class="fa-solid fa-trash text-danger"></i>
                                         </a>
                                     </td>

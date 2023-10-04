@@ -5,10 +5,10 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link fw-bold text-dark" id="sinhvien" href="?controller=sinhvien&action=index">Sinh Viên</a>
+                                <a class="nav-link fw-bold text-dark" id="sinhvien" href="?controller=student&action=index">Sinh Viên</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link fw-bold text-dark" id="lop" href="?controller=lop&action=index">Lớp Học</a>
+                                <a class="nav-link fw-bold text-dark" id="lop" href="?controller=class1&action=index">Lớp Học</a>
                             </li>
                         </ul>
                     </div>

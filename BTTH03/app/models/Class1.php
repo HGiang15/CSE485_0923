@@ -1,14 +1,16 @@
 <?php
-class Lop {
+class Class1 {
     private $id;
-    private $tenLop;
+    private $nameClass1;
 
-    public function __construct($id, $tenLop) {
+    public function __construct($id, $nameClass1) {
         $this->id = $id;
-        $this->tenLop = $tenLop;
+        $this->nameClass1 = $nameClass1;
     }
 
     
+    // Getter and setter
+
 	/**
 	 * @return mixed
 	 */
@@ -28,19 +30,18 @@ class Lop {
 	/**
 	 * @return mixed
 	 */
-	public function getTenLop() {
-		return $this->tenLop;
+	public function getNameClass1() {
+		return $this->nameClass1;
 	}
 	
 	/**
-	 * @param mixed $tenLop 
+	 * @param mixed $nameClass1 
 	 * @return self
 	 */
-	public function setTenLop($tenLop): self {
-		$this->tenLop = $tenLop;
+	public function setNameClass1($nameClass1): self {
+		$this->nameClass1 = $nameClass1;
 		return $this;
 	}
 }
-
 
 ?>
