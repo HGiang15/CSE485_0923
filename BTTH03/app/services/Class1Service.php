@@ -62,7 +62,6 @@ class Class1Service {
             } else {
                 return false;
             }
-
         } else {
             return false;
         }
@@ -86,7 +85,7 @@ class Class1Service {
             //Buoc 3: Xu ly ket qua
             $row = $stmt->fetchAll();
 
-            $Classs = new Class1($row['id'], $row['nameClass1']);
+            $Classs = new Class1($row[0]['id'], $row[0]['nameClass1']);
 
             return $Classs;
         } else {

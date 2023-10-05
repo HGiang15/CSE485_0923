@@ -14,7 +14,7 @@
 <body>
     <header>
         <?php
-            include_once (APP_ROOT.'/app/layout/header.php')
+        include_once(APP_ROOT . '/app/views/layout/header.php')
         ?>
     </header>
 
@@ -48,15 +48,35 @@
                                     <td><?php echo $student->getDateOfBirth(); ?></td>
                                     <td><?php echo $student->getIdClass1(); ?></td>
                                     <td>
-                                        <a class="fs-4 color-primary" href="">
+                                        <a class="fs-4 color-primary" href="?controller=student&action=edit_student&idSelect=<?php echo $student->getId(); ?>">
                                             <i class="fa-solid fa-pen-to-square"></i>
                                         </a>
                                     </td>
                                     <td>
-                                        <a class="fs-4 color-primary user-delete-link" href="" data-bs-toggle="modal" data-bs-target="#modal">
+                                        <a class="fs-4 color-primary user-delete-link" href="" data-bs-toggle="modal" data-bs-target="#modal<?php echo $student->getId(); ?>">
                                             <i class="fa-solid fa-trash text-danger"></i>
                                         </a>
                                     </td>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="modal<?php echo $student->getId(); ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">DELETE</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Bạn có chắc chắn muốn xóa sinh viên có id: <?php echo $student->getId(); ?>?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                    <a href="?controller=student&action=delete_student&idSelect=<?php echo $student->getId(); ?>">
+                                                        <button type="button" class="btn btn-primary">Yes</button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </tr>
                             <?php } ?>
                         </tbody>
