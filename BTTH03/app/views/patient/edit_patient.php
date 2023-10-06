@@ -46,7 +46,7 @@
                             foreach ($doctors as $doctor) {
                             ?>
                                 <?php if ($patient->getIdDoctor() == $doctor->getId()) { ?>
-                                    <option selected>
+                                    <option value="<?php echo $doctor->getId(); ?>" selected>
                                         <?php echo $doctor->getNameDoctor(); ?>
                                     </option>
                                 <?php } else { ?>
