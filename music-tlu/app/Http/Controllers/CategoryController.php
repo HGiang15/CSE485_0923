@@ -11,16 +11,16 @@ class CategoryController extends Controller
     {
         // SELECT * FROM categories LIMIT 5 OFFSET ((page_number - 1) * 5)
         $categories = Category::orderBy('idCategory', 'desc')->paginate(5);
-        return view('admin.category.index', compact('categories'))->with((request()->input('page', 1) - 1) *5);
+        return view('admin.category.index', compact('categories'))->with((request()->input('page', 1) - 1) * 5);
     }
 
-    public function search(Request $request) {
-        $search = $request->search;
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
 
-        $categories = Category::where(function($query) use ($search) {
-            $query->where('idCategory', 'like', "%$search%")
-            ->orWhere('nameCategory', 'like', "%$search%");
-        })->paginate(10);;
+        $categories = Category::where('idCategory', 'like', "%$search%")
+            ->orWhere('nameCategory', 'like', "%$search%")
+            ->paginate(10);
 
         return view('admin.category.index', compact('categories', 'search'));
     }
@@ -28,7 +28,7 @@ class CategoryController extends Controller
 
     public function create()
     {
-        return view('admin.category.create');   
+        return view('admin.category.create');
     }
 
     public function store(Request $request)
@@ -41,7 +41,7 @@ class CategoryController extends Controller
         // $category = Category::create([
         //     'nameCategory' => $request->nameCategory
         // ]);
-    
+
         // C2
         $category = Category::create($validate);
 

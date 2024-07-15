@@ -13,9 +13,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/search', [CategoryController::class, 'search']);
-Route::get('/search', [AuthorController::class, 'search']);
-Route::get('/search', [ArticleController::class, 'search']);
+// Route::get('/search', [CategoryController::class, 'search']);
+// Route::get('/search', [AuthorController::class, 'search']);
+// Route::get('/search', [ArticleController::class, 'search']);
+Route::get('/categories/search', [CategoryController::class, 'search'])->name('categories.search');
+Route::get('/authors/search', [AuthorController::class, 'search'])->name('authors.search');
+Route::get('/articles/search', [ArticleController::class, 'search'])->name('articles.search');
+
 
 
 // admin
@@ -31,10 +35,8 @@ Route::resource('/articles', ArticleController::class);
 // homepage
 Route::resource('homepage', HomeController::class);
 
-Route::resource('/users',UserController::class);
+Route::resource('/users', UserController::class);
 
 Route::get('/signup', [UserController::class, 'signup'])->name('users.signup');
 
 Route::post('/login', [UserController::class, 'login'])->name('users.login');
-
-

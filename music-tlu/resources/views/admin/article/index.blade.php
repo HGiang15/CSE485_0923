@@ -11,10 +11,16 @@
 <div class="card">
     <div class="card-header">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-3">
                 <h3>Article</h3>
             </div>
             <div class="col-md-6">
+                <form class="d-flex" role="search" method="GET" action="{{ route('articles.search') }}">
+                    <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+            <div class="col-md-3">
                 <a href="{{ route('articles.create') }}" class="btn btn-success float-end">Add new Article</a>
             </div>
         </div>
