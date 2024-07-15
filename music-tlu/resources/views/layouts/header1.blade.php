@@ -9,10 +9,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active fw-bold" aria-current="page" href="{{route('homepage.index')}}">TRANG CHỦ</a>
+                    <a class="nav-link active fw-bold" aria-current="page" href="{{route('homepage.index')}}">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active fw-bold" aria-current="page" href="{{route('users.index')}}">ĐĂNG NHẬP</a>
+                    <a class="nav-link active fw-bold" aria-current="page" href="{{route('users.index')}}">LOGIN</a>
                 </li>
             </ul>
             <form class="d-flex" role="search">
